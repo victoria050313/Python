@@ -52,3 +52,87 @@ s1[1:4] #2,3,4
 
 #列表排序
 sorted(s1)
+```
+## 元组
+元组的元素不能修改<br>
+元组在创建时间和占用的空间上面都优于列表<br>
+```python
+# 定义元组
+t = ('骆昊', 38, True, '四川成都')
+
+#下标运算
+t[0]
+
+#遍历元组
+for member in t:
+    print(member)
+
+#不能修改元素
+# t[0] = '王大锤'  # TypeError
+
+# 将元组转换成列表
+person = list(t)
+
+#将列表转换成元组
+t = tuple(person)
+```
+## 集合（set）
+不允许有重复元素，而且可以进行交集、并集、差集等运算<br>
+创建集合
+```python
+set1 = {1,2,3}
+set2 = set(range(1,4))
+set3 = set((1,2,3))
+set4 = {num for num in range(1,10) if num % 2 == 0 }
+```
+添加元素和删除元素
+```python
+#添加
+set1.add(4) 
+set1.update([11,12]) #添加多个元素，参数是一个可迭代对象，比如列表、集合、元组等
+#删除
+set1.remove(4) #如果元素不存在，则会发生错误
+set.discard(3) #如果元素不存在，不会发生错误
+set1.pop() #随机删除一个,返回删除的元素
+#清空
+set1.clear
+```
+集合的交集、并集、差集、对称差运算
+```python
+set1 & set2
+set1 | set2
+set1 - set2
+set1 ^ set2
+```
+## 字典
+每个元素都是由一个键和一个值组成的“键值对”.键：值
+```python
+# 创建字典的字面量语法
+scores = {'骆昊': 95, '白元芳': 78, '狄仁杰': 82}
+# 创建字典的构造器语法
+items1 = dict(one=1, two=2, three=3, four=4)
+# 通过zip函数将两个序列压成字典
+items2 = dict(zip(['a', 'b', 'c'], '123'))
+# 创建字典的推导式语法
+items3 = {num: num ** 2 for num in range(1, 10)}
+
+# 通过键可以获取字典中对应的值
+print(scores['骆昊'])
+# 对字典中所有键值对进行遍历
+for key in scores:
+    print(f'{key}: {scores[key]}')
+
+# 更新字典中的元素
+scores['白元芳'] = 65
+scores.update(冷面=67, 方启鹤=85)
+if '武则天' in scores:
+    print(scores['武则天'])
+
+# get方法也是通过键获取对应的值但是可以设置默认值
+print(scores.get('武则天', 60))
+
+# 删除字典中的元素
+scores.pop('骆昊', 100)
+# 清空字典
+scores.clear()
+```
