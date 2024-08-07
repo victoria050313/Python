@@ -1,5 +1,35 @@
 #
 ## sys
+sys模块是与python解释器交互的一个接口<br>
+### 处理命令行参数
+argv 列表包含了传递给脚本的所有参数<br>
+列表的第一个元素为脚本自身的名称<br>
+```python
+sys.argv[0] #表示程序自身
+sys.argv[1] #表示程序的第一个参数
+sys.argv[2] #表示程序的第二个参数
+```
+### 输入
+```python
+# sys.stdin.readline() 相当于input，区别在于input不会读入'\n'
+aa = sys.stdin.readline()		# 输入数据多一个'\n'
+bb = input('请输入：')
+ 
+print(len(aa))		
+print(len(bb))
+ 
+#结果
+i love DL
+请输入：i love DL
+10
+9
+```
+### 输出
+```python
+sys.stdout.write('hello' + '\n')
+print('hello')  #等价
+```
+
 ## 变量类型
 ```python 
 int() 
