@@ -238,7 +238,7 @@ array17[0][1] #或 array17[0, 1]
 ```
 ### 切片索引
 形如[开始索引:结束索引:跨度]的语法
-
+<img src="png/ndarray-slice.png" style="zoom:60%;">
 ### 花式索引
 ```python
 #一维
